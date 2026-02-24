@@ -2,9 +2,12 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import '../config/app_config.dart';
+import '../services/connectivity/connectivity_service.dart';
+import '../services/connectivity/connectivity_service_impl.dart';
 import '../services/log/log_service.dart';
 import '../services/log/console_log_service.dart';
 import '../services/network/interceptors/auth_interceptor.dart';
+import '../services/network/interceptors/connectivity_interceptor.dart';
 import '../services/network/interceptors/error_interceptor.dart';
 import '../services/network/interceptors/loading_interceptor.dart';
 import '../services/network/interceptors/logging_interceptor.dart';
@@ -27,6 +30,7 @@ Future<void> setup({Environment env = Environment.dev}) async {
   sl.registerSingleton(navigatorKey);
   sl.registerSingleton<LogService>(ConsoleLogService());
   sl.registerSingleton<UiService>(AppUiService(navigatorKey));
+  sl.registerSingleton<ConnectivityService>(ConnectivityServiceImpl());
 
   // Storage - Initialize and register synchronously
   final storageService = SharedPreferencesStorageService();
@@ -45,6 +49,7 @@ Future<void> setup({Environment env = Environment.dev}) async {
   );
 
   dio.interceptors.addAll([
+    ConnectivityInterceptor(), // Must be the first interceptor
     LoadingInterceptor(),
     LoggingInterceptor(),
     AuthInterceptor(),

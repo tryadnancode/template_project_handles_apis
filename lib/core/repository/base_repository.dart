@@ -39,6 +39,9 @@ class BaseRepository {
   }
 
   AppException _handleDioException(DioException e) {
+    if (e.error is AppException) {
+      return e.error as AppException;
+    }
     if (e.error is SocketException) {
       return AppException('No internet connection', 503);
     }
