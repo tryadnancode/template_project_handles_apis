@@ -1,4 +1,4 @@
-library template_project;
+library flutter_robust_starter;
 
 // Export DI and Config
 export 'core/di/service_locator.dart';

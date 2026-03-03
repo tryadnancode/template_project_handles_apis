@@ -1,6 +1,6 @@
-# Template Project
+# Flutter Robust Starter
 
-A robust, production-ready Flutter architecture package. It provides a pre-configured foundation with **Dio**, **GetIt**, **Connectivity Checks**, and **Clean Architecture** patterns, allowing you to skip the boilerplate and start building features immediately.
+A robust, production-ready Flutter starter architecture package. It provides a pre-configured foundation with **Dio**, **GetIt**, **Connectivity Checks**, and **Clean Architecture** patterns, allowing you to skip the boilerplate and start building features immediately.
 
 ---
 
@@ -21,12 +21,12 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  template_project: ^1.0.0
+  flutter_robust_starter: ^1.1.0
 ```
 
 Or run:
 ```sh
-flutter pub add template_project
+flutter pub add flutter_robust_starter
 ```
 
 ---
@@ -38,7 +38,7 @@ In your `main.dart`, call `setup()` to initialize DI, Storage, and Theme service
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:template_project/template_project.dart';
+import 'package:flutter_robust_starter/flutter_robust_starter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

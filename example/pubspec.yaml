@@ -1,5 +1,5 @@
 name: example
-description: An example of using the template_project package.
+description: An example of using the flutter_robust_starter package.
 publish_to: 'none'
 
 environment:
@@ -8,7 +8,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  template_project:
+  flutter_robust_starter:
     path: ../
 
 dev_dependencies:

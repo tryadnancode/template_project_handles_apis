@@ -1,3 +1,10 @@
+## 1.1.0
+
+* Renamed the project to `flutter_robust_starter`.
+* Major overhaul for publication on pub.dev.
+* Updated all internal references to the new package name.
+* Corrected the barrel file name to `flutter_robust_starter.dart`.
+
 ## 1.0.3
 
 * Added an example project in the `example/` directory.

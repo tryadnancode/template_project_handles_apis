@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:template_project/template_project.dart';
+import 'package:flutter_robust_starter/flutter_robust_starter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       listenable: themeService,
       builder: (context, _) {
         return MaterialApp(
-          title: 'Template Project Example',
+          title: 'Flutter Robust Starter Example',
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
           themeMode: themeService.themeMode,
@@ -46,7 +46,7 @@ class ExampleHomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const AppCard(
-              child: Text('This is a card from the template!'),
+              child: Text('This is a card from the starter!'),
             ),
             const SizedBox(height: 20),
             AppButton(

@@ -1,6 +1,6 @@
-name: template_project
+name: flutter_robust_starter
 description: "A robust, production-ready Flutter starter architecture with Dio, Clean Architecture, and essential core services."
-version: 1.0.3
+version: 1.1.0
 homepage: https://github.com/tryadnancode/template_project_handles_apis
 repository: https://github.com/tryadnancode/template_project_handles_apis
 issue_tracker: https://github.com/tryadnancode/template_project_handles_apis/issues
