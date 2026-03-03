@@ -2,7 +2,6 @@ import 'dart:developer';
 import 'log_service.dart';
 
 class ConsoleLogService implements LogService {
-
   String _time() => DateTime.now().toIso8601String();
 
   @override

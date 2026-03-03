@@ -2,7 +2,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'storage_service.dart';
 
 class SharedPreferencesStorageService implements StorageService {
-
   late final SharedPreferences _prefs;
 
   @override

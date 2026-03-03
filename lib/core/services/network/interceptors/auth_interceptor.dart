@@ -6,7 +6,10 @@ class AuthInterceptor extends Interceptor {
   final StorageService _storageService = sl<StorageService>();
 
   @override
-  Future<void> onRequest(RequestOptions options, RequestInterceptorHandler handler) async {
+  Future<void> onRequest(
+    RequestOptions options,
+    RequestInterceptorHandler handler,
+  ) async {
     final token = _storageService.get('token');
     if (token != null) {
       options.headers['Authorization'] = 'Bearer $token';

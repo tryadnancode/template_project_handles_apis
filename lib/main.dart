@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'core/config/app_config.dart';
 import 'core/di/service_locator.dart';
 import 'core/routing/app_router.dart';
 import 'core/theme/app_theme.dart';
-import 'core/theme/theme_cubit.dart';
+import 'core/theme/theme_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,21 +17,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => sl<ThemeCubit>(),
-      child: BlocBuilder<ThemeCubit, ThemeMode>(
-        builder: (context, themeMode) {
-          return MaterialApp(
-            title: 'Flutter Demo',
-            theme: AppTheme.lightTheme,
-            darkTheme: AppTheme.darkTheme,
-            themeMode: themeMode,
-            navigatorKey: sl<GlobalKey<NavigatorState>>(),
-            initialRoute: AppRouter.homeRoute,
-            onGenerateRoute: AppRouter.onGenerateRoute,
-          );
-        },
-      ),
+    final themeService = sl<ThemeService>();
+
+    return ListenableBuilder(
+      listenable: themeService,
+      builder: (context, _) {
+        return MaterialApp(
+          title: 'Flutter Template',
+          debugShowCheckedModeBanner: false,
+          theme: AppTheme.lightTheme,
+          darkTheme: AppTheme.darkTheme,
+          themeMode: themeService.themeMode,
+          navigatorKey: sl<GlobalKey<NavigatorState>>(),
+          initialRoute: AppRouter.homeRoute,
+          onGenerateRoute: AppRouter.onGenerateRoute,
+        );
+      },
     );
   }
 }

@@ -16,9 +16,7 @@ class AppScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar,
-      body: isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : body,
+      body: isLoading ? const Center(child: CircularProgressIndicator()) : body,
     );
   }
 }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'ui_service.dart';
 
 class AppUiService implements UiService {
-
   final GlobalKey<NavigatorState> navigatorKey;
 
   AppUiService(this.navigatorKey);
@@ -16,9 +15,7 @@ class AppUiService implements UiService {
     showDialog(
       context: _context!,
       barrierDismissible: false,
-      builder: (_) => const Center(
-        child: CircularProgressIndicator(),
-      ),
+      builder: (_) => const Center(child: CircularProgressIndicator()),
     );
   }
 
@@ -33,10 +30,7 @@ class AppUiService implements UiService {
     if (_context == null) return;
 
     ScaffoldMessenger.of(_context!).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        backgroundColor: Colors.green,
-      ),
+      SnackBar(content: Text(message), backgroundColor: Colors.green),
     );
   }
 
@@ -45,10 +39,7 @@ class AppUiService implements UiService {
     if (_context == null) return;
 
     ScaffoldMessenger.of(_context!).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        backgroundColor: Colors.red,
-      ),
+      SnackBar(content: Text(message), backgroundColor: Colors.red),
     );
   }
 }

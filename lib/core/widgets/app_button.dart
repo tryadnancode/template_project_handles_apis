@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum AppButtonStyle {
-  filled,
-  outlined,
-  text,
-}
+enum AppButtonStyle { filled, outlined, text }
 
 class AppButton extends StatelessWidget {
   final String text;

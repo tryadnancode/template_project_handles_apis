@@ -17,7 +17,7 @@ import '../services/network/network_service.dart';
 import '../services/network/dio_network_service.dart';
 import '../services/storage/storage_service.dart';
 import '../services/storage/shared_preferences_storage_service.dart';
-import '../theme/theme_cubit.dart';
+import '../theme/theme_service.dart';
 
 final sl = GetIt.instance;
 
@@ -37,8 +37,10 @@ Future<void> setup({Environment env = Environment.dev}) async {
   await storageService.init();
   sl.registerSingleton<StorageService>(storageService);
 
-  // Theme
-  sl.registerFactory(() => ThemeCubit());
+  // Theme - Initialize and register synchronously
+  final themeService = ThemeService();
+  await themeService.init();
+  sl.registerSingleton<ThemeService>(themeService);
 
   // Dio and Network
   final dio = Dio(
@@ -49,7 +51,7 @@ Future<void> setup({Environment env = Environment.dev}) async {
   );
 
   dio.interceptors.addAll([
-    ConnectivityInterceptor(), // Must be the first interceptor
+    ConnectivityInterceptor(),
     LoadingInterceptor(),
     LoggingInterceptor(),
     AuthInterceptor(),

@@ -1,5 +1,4 @@
 abstract class StorageService {
-
   Future<void> init();
 
   Future<void> set(String key, String value);
