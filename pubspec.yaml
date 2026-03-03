@@ -1,8 +1,8 @@
 name: template_project
 description: "A robust, production-ready Flutter starter architecture with Dio, Clean Architecture, and essential core services."
-version: 1.0.2
-homepage: https://github.com/tryadnancode/template_project_handles_apis.git
-repository: https://github.com/tryadnancode/template_project_handles_apis.git
+version: 1.0.3
+homepage: https://github.com/tryadnancode/template_project_handles_apis
+repository: https://github.com/tryadnancode/template_project_handles_apis
 issue_tracker: https://github.com/tryadnancode/template_project_handles_apis/issues
 
 environment:
@@ -16,6 +16,7 @@ dependencies:
   get_it: ^9.2.1
   shared_preferences: ^2.5.4
   connectivity_plus: ^7.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
