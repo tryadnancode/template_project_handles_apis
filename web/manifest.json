@@ -1,6 +1,6 @@
 {
-    "name": "demo",
-    "short_name": "demo",
+    "name": "flutter_robust_starter",
+    "short_name": "flutter_robust_starter",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
