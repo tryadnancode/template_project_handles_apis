@@ -15,7 +15,7 @@ class AppConfig {
 
   static AppConfig prod() {
     return AppConfig(
-      baseUrl: 'https://api.prod.com/', // Replace with your prod URL
+      baseUrl: 'https://fakestoreapi.com/', // Replace with your prod URL
       environment: Environment.prod,
     );
   }
